@@ -1,0 +1,104 @@
+[versions]
+agp = "8.8.0"
+kotlin = "2.0.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.10.0"
+composeBom = "2024.04.01"
+appcompat = "1.7.0"
+material = "1.12.0"
+navigation = "2.7.4"
+hilt = "2.48"
+hiltNavigation = "1.2.0"
+hiltCompiler = "1.2.0"
+retrofit = "2.11.0"
+okhttp = "4.9.0"
+gsonConverter = "2.9.0"
+lifecycle = "2.6.2"
+coil = "2.4.0"
+pagingRuntime = "3.2.1"
+pagingCompose = "3.2.1"
+mockito = "5.5.0"
+mockitoKotlin = "5.1.0"
+kotlinCoroutineTest = "1.7.3"
+room = "2.5.2"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+mockito = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockitoKotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockitoKotlin" }
+
+#Kotlin Coroutines Test library -> runTest and StandardTestDispatcher
+kotlinCoroutineTest = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutineTest" }
+
+#dagger-hilt
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" } #hiltViewModel
+hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltCompiler" }
+
+#retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+gson-converted = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+
+#lifecycle -> collectAsStateWithLifecycle from here
+lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+
+#coil -> coroutine image loader
+coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+#navigation
+navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+
+#// Core Paging Library
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "pagingRuntime" } # For basic Paging functionality
+
+#// Paging Compose Integration
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingRuntime" } # For Compose support
+
+# Room runtime
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+
+# Kotlin Extensions and Coroutines support for Room
+room-coroutine = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
+# room annotation processor, compiler (use Kapt)
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# Optional - Paging 3 support
+room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+
+[bundles]
+retrofit = ["retrofit", "gson-converted", "okhttp"]
+hilt = ["hilt", "hilt-navigation"]
+hiltCompiler = ["hilt-android-compiler", "hilt-compiler"]
+navigation = ["navigation"]
+mockito = ["mockito", "mockitoKotlin"]
+room = ["room-runtime", "room-coroutine"]
+
