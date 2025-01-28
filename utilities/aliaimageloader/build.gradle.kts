@@ -2,12 +2,10 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("dagger.hilt.android.plugin")
-    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
-    namespace = "com.example.ui"
+    namespace = "com.example.aliaimageloader"
     compileSdk = 35
 
     defaultConfig {
@@ -39,21 +37,6 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":feature:movie:domain"))
-    implementation(project(":core:common"))
-    implementation(project(":core:navigation"))
-    implementation(project(":utilities:aliaimageloader"))
-
-    // Hilt core dependency
-    implementation(libs.bundles.hilt)
-    kapt(libs.bundles.hiltCompiler)
-
-    implementation(libs.lifecycle)
-//    implementation(libs.coil)
-
-    implementation(libs.paging.runtime)
-    implementation(libs.paging.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

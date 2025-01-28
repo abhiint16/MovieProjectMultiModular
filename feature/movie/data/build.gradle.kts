@@ -38,6 +38,7 @@ dependencies {
 
     implementation(project(":feature:movie:domain"))
     implementation(project(":core:network"))
+    implementation(project(":core:common"))
 
     // Hilt core dependency
     implementation(libs.bundles.hilt)

@@ -23,7 +23,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
+import com.example.aliaimageloader.ui.screens.AliaAsyncImage
 import com.example.domain.model.Movie
 import com.example.ui.model.MovieUiEvent
 import com.example.ui.navigation.LocalLifecycleOwner
@@ -88,7 +88,7 @@ fun ContentState(movieList: List<Movie>, itemClick: (id: Int) -> Unit) {
 
     LazyVerticalGrid(columns = GridCells.Fixed(3), state = state) {
         items(items = movieList, key = { it.id }) { movie ->
-            AsyncImage(
+            AliaAsyncImage(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp)
@@ -96,8 +96,7 @@ fun ContentState(movieList: List<Movie>, itemClick: (id: Int) -> Unit) {
                     .clickable {
                         itemClick.invoke(movie.id)
                     },
-                model = movie.imageUrl,
-                contentDescription = null,
+                url = movie.imageUrl,
                 contentScale = ContentScale.Fit
             )
         }
